@@ -19,6 +19,9 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
+using Startup.Food.Repositorio.Interface;
+using Startup.Food.Repositorio.Repositorio;
+
 namespace Startup.Food.Api
 {
     public class Startup
@@ -73,6 +76,8 @@ namespace Startup.Food.Api
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.Add(new ServiceDescriptor(typeof(IRepositorioLanche), typeof(RepositorioLanche), ServiceLifetime.Scoped));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

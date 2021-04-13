@@ -12,6 +12,8 @@ namespace Startup.Food.Api.Services
 {
     public class Promocao
     {
+
+
         public JObject CalcularPromocao(EntidadeLanche Lanche) {
 
             try

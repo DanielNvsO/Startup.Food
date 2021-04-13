@@ -42,13 +42,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Builder\BuilderPedido.cs" />
+    <Compile Include="Interface\IPromocao.cs" />
+    <Compile Include="Interface\IRepositorioLanche.cs" />
     <Compile Include="Negocio\ServicePromocao.cs" />
     <Compile Include="Builder\Conexao\Conexao.cs" />
     <Compile Include="Entidade\EntidadeIngrediente.cs" />
     <Compile Include="Entidade\EntidadeLanche.cs" />
     <Compile Include="Entidade\EntidadePedido.cs" />
     <Compile Include="Entidade\EntidadePromocao.cs" />
-    <Compile Include="Interface\IPromocao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorio\RepositorioLanche.cs" />
     <Compile Include="Negocio\Promocao\Light.cs" />

@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using Startup.Food.Repositorio.Entidade;
 using Startup.Food.Repositorio.Builder.Conexao;
 using System.Data.SqlClient;
+using Startup.Food.Repositorio.Interface;
 
 namespace Startup.Food.Repositorio.Repositorio
 {
-    public class RepositorioLanche
+    public class RepositorioLanche : IRepositorioLanche
     {
         //Consultar
         public List<EntidadeLanche> ConsultarLanches()
@@ -70,7 +71,7 @@ namespace Startup.Food.Repositorio.Repositorio
         }
 
         //Consultar
-        internal List<EntidadeIngrediente> ConsultarIngredientesLanche(EntidadeLanche lanche)
+        public List<EntidadeIngrediente> ConsultarIngredientesLanche(EntidadeLanche lanche)
         {
 
             Conexao strcn = new Conexao();

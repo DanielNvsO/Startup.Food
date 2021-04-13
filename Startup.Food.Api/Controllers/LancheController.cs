@@ -14,6 +14,7 @@ using Startup.Food.Repositorio.Repositorio;
 using Startup.Food.Repositorio.Service;
 using Startup.Food.Api.Services;
 using Newtonsoft.Json.Linq;
+using Startup.Food.Repositorio.Interface;
 
 namespace Startup.Food.Api.Controllers
 {
@@ -21,16 +22,22 @@ namespace Startup.Food.Api.Controllers
     [ApiController]
     public class LancheController : ControllerBase
     {
+        public IRepositorioLanche _IRepositorioLanche;
+        public LancheController(IRepositorioLanche RepositorioLanche)
+        {
+            this._IRepositorioLanche = RepositorioLanche;
+        }
+
        [HttpPost]
        [Route("ConsultarLanches")]
        [Authorize]
         public ActionResult Lanches()
         {
-            RepositorioLanche lanche = new RepositorioLanche();
+            //RepositorioLanche lanche = new RepositorioLanche();
             List<EntidadeLanche> _return;
             try
             {
-                _return = lanche.ConsultarLanches();
+                _return = _IRepositorioLanche.ConsultarLanches();
 
                 return Ok(_return);
 
@@ -41,7 +48,7 @@ namespace Startup.Food.Api.Controllers
             }
             finally
             {
-                lanche = null;
+                //lanche = null;
                 _return = null;
             }
         }
@@ -51,13 +58,13 @@ namespace Startup.Food.Api.Controllers
         [Authorize]
         public ActionResult ConsultarIngrediente()
         {
-            RepositorioLanche ingrediente = new RepositorioLanche();
+            //RepositorioLanche ingrediente = new RepositorioLanche();
             List<EntidadeIngrediente> _return;
 
             try
             {
 
-                _return = ingrediente.ConsultarIngredientes();
+                _return = _IRepositorioLanche.ConsultarIngredientes();
 
                 return Ok(_return);
 
@@ -68,7 +75,7 @@ namespace Startup.Food.Api.Controllers
             }
             finally
             {
-                ingrediente = null;
+                //ingrediente = null;
                 _return = null;
             }
 

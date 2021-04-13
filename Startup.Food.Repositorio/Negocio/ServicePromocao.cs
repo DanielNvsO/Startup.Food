@@ -11,6 +11,7 @@ namespace Startup.Food.Repositorio.Negocio
 {
     public class ServicePromocao
     {
+  
 
         public decimal Valor { get; set; }
         public bool PromocaoObtida { get; set; }
