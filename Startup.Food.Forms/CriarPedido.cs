@@ -57,9 +57,9 @@ namespace Startup.Food.Forms
 
 
             }
-            catch(Exception ex)
+            catch(Exception)
             {
-                throw ex;
+                throw;
             }
         }
 
@@ -125,7 +125,17 @@ namespace Startup.Food.Forms
             }
             catch (Exception ex)
             {
-                throw ex;
+                Tempo.Text = "00:00:00";
+                timer1.Stop();
+                Segundo = 0;
+                Minuto = 0;
+                Hora = 0;
+                MessageBox.Show(ex.Message.ToString(), "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                ExecAPI = null;
+                msg = null;
             }
         }
 
@@ -139,7 +149,7 @@ namespace Startup.Food.Forms
             }
             catch (Exception ex)
             {
-                throw ex;
+                MessageBox.Show(ex.Message.ToString(), "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -158,7 +168,7 @@ namespace Startup.Food.Forms
             }
             catch (Exception ex)
             {
-                throw ex;
+                MessageBox.Show(ex.Message.ToString(), "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -197,7 +207,7 @@ namespace Startup.Food.Forms
             }
             catch(Exception ex)
             {
-                throw ex;
+                MessageBox.Show(ex.Message.ToString(), "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
         }
@@ -212,7 +222,7 @@ namespace Startup.Food.Forms
 
                 Tempo.Text = "CARREGANDO..";
 
-                 ExecAPI = new ExecutarAPI();
+                ExecAPI = new ExecutarAPI();
 
                 msg = ExecAPI.POST(null, "Lanche/ConsultarLanches");
 
@@ -246,7 +256,14 @@ namespace Startup.Food.Forms
             }
             catch (Exception ex)
             {
-                throw ex;
+                Tempo.Text = "00:00:00";
+                MessageBox.Show(ex.Message.ToString(),"Erro",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                
+                ExecAPI = null;
+                msg = null ;
             }
         }
 
@@ -286,7 +303,7 @@ namespace Startup.Food.Forms
             }
             catch(Exception ex)
             {
-                throw ex;
+                MessageBox.Show(ex.Message.ToString(), "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
         }
