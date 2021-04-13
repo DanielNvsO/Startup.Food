@@ -11,7 +11,7 @@ using Microsoft.IdentityModel.Tokens;
 
 using Startup.Food.Repositorio.Entidade;
 using Startup.Food.Repositorio.Repositorio;
-using Startup.Food.Repositorio.Service;
+using Startup.Food.Repositorio.Negocio;
 using Startup.Food.Api.Services;
 using Newtonsoft.Json.Linq;
 using Startup.Food.Repositorio.Interface;
@@ -33,7 +33,6 @@ namespace Startup.Food.Api.Controllers
        [Authorize]
         public ActionResult Lanches()
         {
-            //RepositorioLanche lanche = new RepositorioLanche();
             List<EntidadeLanche> _return;
             try
             {
@@ -47,8 +46,7 @@ namespace Startup.Food.Api.Controllers
                 return BadRequest(ex.Message);
             }
             finally
-            {
-                //lanche = null;
+            {  
                 _return = null;
             }
         }
@@ -58,7 +56,6 @@ namespace Startup.Food.Api.Controllers
         [Authorize]
         public ActionResult ConsultarIngrediente()
         {
-            //RepositorioLanche ingrediente = new RepositorioLanche();
             List<EntidadeIngrediente> _return;
 
             try
@@ -75,7 +72,7 @@ namespace Startup.Food.Api.Controllers
             }
             finally
             {
-                //ingrediente = null;
+               
                 _return = null;
             }
 

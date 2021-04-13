@@ -9,22 +9,23 @@ namespace Startup.Food.Repositorio.Builder
 {
     public class BuilderPedido
     {
-        private int Id;
-        private List<EntidadeLanche> _Lanches;
-        private decimal _ValorTotal;
+        private int _Id;
+        private List<EntidadePedidoItem> _PedidoItem;
         private DateTime _DataPedido;
-        private string _NomeCliente;
+        private decimal _ValorPedido;
+        private decimal _ValorDesconto;
+        private decimal _ValorTotal;
 
-       
+
+
         public EntidadePedido CriarPedido()
         {
-            return new EntidadePedido(this._Lanches, this._ValorTotal, this._DataPedido, this._NomeCliente);
+            return new EntidadePedido(this._PedidoItem, this._DataPedido, this._ValorPedido, this._ValorDesconto, _ValorTotal);
         }
         
-
-        public BuilderPedido Lanches(List<EntidadeLanche> Lanches)
+        public BuilderPedido PedidoItem(List<EntidadePedidoItem> PedidoItem)
         {
-            this._Lanches = Lanches;
+            this._PedidoItem = PedidoItem;
 
             return this;
         }
@@ -34,18 +35,25 @@ namespace Startup.Food.Repositorio.Builder
 
             return this;
         }
+        public BuilderPedido ValorPedido(decimal ValorPedido)
+        {
+            this._ValorPedido = ValorPedido;
+
+            return this;
+        }
+        public BuilderPedido ValorDesconto(decimal ValorDesconto)
+        {
+            this._ValorDesconto = ValorDesconto;
+
+            return this;
+        }
         public BuilderPedido DataPedido(DateTime DataPedido)
         {
             this._DataPedido = DataPedido;
 
             return this;
         }
-        public BuilderPedido NomeCliente(string NomeCliente)
-        {
-            this._NomeCliente = NomeCliente;
-
-            return this;
-        }
+       
 
     }
 }

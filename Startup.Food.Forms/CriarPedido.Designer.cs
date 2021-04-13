@@ -37,23 +37,17 @@
             this.AdicionarLanche = new System.Windows.Forms.Button();
             this.LanchesGrid = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.FinalizarPedido = new System.Windows.Forms.Button();
+            this.LanchesAdicionadoGrid = new System.Windows.Forms.DataGridView();
             this.LabelValorPedido = new System.Windows.Forms.Label();
             this.ValorPedido = new System.Windows.Forms.TextBox();
             this.LabelDesconto = new System.Windows.Forms.Label();
             this.ValorDesconto = new System.Windows.Forms.TextBox();
             this.LabelValorTotal = new System.Windows.Forms.Label();
             this.ValorTotal = new System.Windows.Forms.TextBox();
-            this.FinalizarPedido = new System.Windows.Forms.Button();
             this.IniciarPedido = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.Tempo = new System.Windows.Forms.Label();
-            this.ValorDescontoEscolhido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ValorPedidoEscolhido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PromocaoLanche = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IngredientesLanches = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ValorLanche = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Lanche = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LanchesAdicionadoGrid = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IngredientesGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LanchesGrid)).BeginInit();
@@ -112,6 +106,26 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lanches Escolhidos";
             // 
+            // FinalizarPedido
+            // 
+            this.FinalizarPedido.Location = new System.Drawing.Point(776, 22);
+            this.FinalizarPedido.Name = "FinalizarPedido";
+            this.FinalizarPedido.Size = new System.Drawing.Size(74, 44);
+            this.FinalizarPedido.TabIndex = 3;
+            this.FinalizarPedido.Text = "Finalizar Pedido";
+            this.FinalizarPedido.UseVisualStyleBackColor = true;
+            this.FinalizarPedido.Click += new System.EventHandler(this.FinalizarPedido_Click);
+            // 
+            // LanchesAdicionadoGrid
+            // 
+            this.LanchesAdicionadoGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.LanchesAdicionadoGrid.Location = new System.Drawing.Point(13, 22);
+            this.LanchesAdicionadoGrid.Name = "LanchesAdicionadoGrid";
+            this.LanchesAdicionadoGrid.Size = new System.Drawing.Size(741, 135);
+            this.LanchesAdicionadoGrid.TabIndex = 0;
+            this.LanchesAdicionadoGrid.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.LanchesAdicionadoGrid_UserDeletingRow);
+            this.LanchesAdicionadoGrid.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LanchesAdicionadoGrid_KeyDown);
+            // 
             // LabelValorPedido
             // 
             this.LabelValorPedido.AutoSize = true;
@@ -166,16 +180,6 @@
             this.ValorTotal.TabIndex = 7;
             this.ValorTotal.Text = "0";
             // 
-            // FinalizarPedido
-            // 
-            this.FinalizarPedido.Location = new System.Drawing.Point(776, 22);
-            this.FinalizarPedido.Name = "FinalizarPedido";
-            this.FinalizarPedido.Size = new System.Drawing.Size(74, 44);
-            this.FinalizarPedido.TabIndex = 3;
-            this.FinalizarPedido.Text = "Finalizar Pedido";
-            this.FinalizarPedido.UseVisualStyleBackColor = true;
-            this.FinalizarPedido.Click += new System.EventHandler(this.FinalizarPedido_Click);
-            // 
             // IniciarPedido
             // 
             this.IniciarPedido.Location = new System.Drawing.Point(108, 8);
@@ -199,60 +203,6 @@
             this.Tempo.Name = "Tempo";
             this.Tempo.Size = new System.Drawing.Size(0, 25);
             this.Tempo.TabIndex = 9;
-            // 
-            // ValorDescontoEscolhido
-            // 
-            this.ValorDescontoEscolhido.HeaderText = "ValorDescontoEscolhido";
-            this.ValorDescontoEscolhido.Name = "ValorDescontoEscolhido";
-            this.ValorDescontoEscolhido.ReadOnly = true;
-            this.ValorDescontoEscolhido.Visible = false;
-            // 
-            // ValorPedidoEscolhido
-            // 
-            this.ValorPedidoEscolhido.HeaderText = "ValorPedidoEscolhido";
-            this.ValorPedidoEscolhido.Name = "ValorPedidoEscolhido";
-            this.ValorPedidoEscolhido.ReadOnly = true;
-            this.ValorPedidoEscolhido.Visible = false;
-            // 
-            // PromocaoLanche
-            // 
-            this.PromocaoLanche.HeaderText = "Promoção";
-            this.PromocaoLanche.Name = "PromocaoLanche";
-            this.PromocaoLanche.ReadOnly = true;
-            // 
-            // IngredientesLanches
-            // 
-            this.IngredientesLanches.HeaderText = "Ingredientes";
-            this.IngredientesLanches.Name = "IngredientesLanches";
-            this.IngredientesLanches.ReadOnly = true;
-            // 
-            // ValorLanche
-            // 
-            this.ValorLanche.HeaderText = "Valor";
-            this.ValorLanche.Name = "ValorLanche";
-            this.ValorLanche.ReadOnly = true;
-            // 
-            // Lanche
-            // 
-            this.Lanche.HeaderText = "Lanche";
-            this.Lanche.Name = "Lanche";
-            this.Lanche.ReadOnly = true;
-            // 
-            // LanchesAdicionadoGrid
-            // 
-            this.LanchesAdicionadoGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.LanchesAdicionadoGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Lanche,
-            this.ValorLanche,
-            this.IngredientesLanches,
-            this.PromocaoLanche,
-            this.ValorPedidoEscolhido,
-            this.ValorDescontoEscolhido});
-            this.LanchesAdicionadoGrid.Location = new System.Drawing.Point(13, 22);
-            this.LanchesAdicionadoGrid.Name = "LanchesAdicionadoGrid";
-            this.LanchesAdicionadoGrid.Size = new System.Drawing.Size(741, 135);
-            this.LanchesAdicionadoGrid.TabIndex = 0;
-            this.LanchesAdicionadoGrid.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.LanchesAdicionadoGrid_UserDeletingRow);
             // 
             // CriarPedido
             // 
@@ -300,12 +250,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label Tempo;
         private System.Windows.Forms.DataGridView LanchesAdicionadoGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Lanche;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ValorLanche;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IngredientesLanches;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PromocaoLanche;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ValorPedidoEscolhido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ValorDescontoEscolhido;
     }
 }
 

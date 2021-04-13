@@ -14,11 +14,17 @@ namespace Startup.Food.Repositorio.Builder.Conexao
 
         public SqlConnection GetConnection()
         {
-            sqlCon = new SqlConnection(_connectionString);
+            try { 
+                sqlCon = new SqlConnection(_connectionString);
 
-            sqlCon.Open();
+                sqlCon.Open();
 
-            return sqlCon;
+                return sqlCon;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
 

@@ -2,9 +2,9 @@ using System;
 using Xunit;
 using Startup.Food.Repositorio.Entidade;
 using System.Collections.Generic;
-using Startup.Food.Repositorio.Service;
 using Startup.Food.Repositorio.Interface;
-using Startup.Food.Repositorio.Service.Promocao;
+using Startup.Food.Repositorio.Negocio.Promocao;
+using Startup.Food.Repositorio.Negocio;
 
 namespace Startup.Food.Test
 {

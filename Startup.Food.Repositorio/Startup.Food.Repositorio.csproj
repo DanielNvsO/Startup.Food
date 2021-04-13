@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,8 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Builder\BuilderPedido.cs" />
+    <Compile Include="Entidade\EntidadePedidoItem.cs" />
     <Compile Include="Interface\IPromocao.cs" />
     <Compile Include="Interface\IRepositorioLanche.cs" />
+    <Compile Include="Interface\IRepositorioPedido.cs" />
     <Compile Include="Negocio\ServicePromocao.cs" />
     <Compile Include="Builder\Conexao\Conexao.cs" />
     <Compile Include="Entidade\EntidadeIngrediente.cs" />
@@ -55,8 +58,11 @@
     <Compile Include="Negocio\Promocao\Light.cs" />
     <Compile Include="Negocio\Promocao\MuitaCarne.cs" />
     <Compile Include="Negocio\Promocao\MuitoQueijo.cs" />
-    <Compile Include="Negocio\ServiceLanche.cs" />
+    <Compile Include="Repositorio\RepositorioPedido.cs" />
+    <Compile Include="Util\UtilSerial.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

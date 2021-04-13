@@ -18,6 +18,10 @@ C:\Users\danielnovaes\source\repos\Startup.Food\Startup.Food.Test\obj\Debug\netc
 C:\Users\danielnovaes\source\repos\Startup.Food\Startup.Food.Test\obj\Debug\netcoreapp2.1\Startup.Food.Test.csproj.CopyComplete
 C:\Users\danielnovaes\source\repos\Startup.Food\Startup.Food.Test\obj\Debug\netcoreapp2.1\Startup.Food.Test.dll
 C:\Users\danielnovaes\source\repos\Startup.Food\Startup.Food.Test\obj\Debug\netcoreapp2.1\Startup.Food.Test.pdb
+C:\compartilhada\Projetos\Startup.Food\Startup.Food.Test\obj\Debug\netcoreapp2.1\Startup.Food.Test.csprojAssemblyReference.cache
+C:\compartilhada\Projetos\Startup.Food\Startup.Food.Test\obj\Debug\netcoreapp2.1\Startup.Food.Test.AssemblyInfoInputs.cache
+C:\compartilhada\Projetos\Startup.Food\Startup.Food.Test\obj\Debug\netcoreapp2.1\Startup.Food.Test.AssemblyInfo.cs
+C:\compartilhada\Projetos\Startup.Food\Startup.Food.Test\obj\Debug\netcoreapp2.1\Startup.Food.Test.csproj.CoreCompileInputs.cache
 C:\compartilhada\Projetos\Startup.Food\Startup.Food.Test\bin\Debug\netcoreapp2.1\testhost.exe
 C:\compartilhada\Projetos\Startup.Food\Startup.Food.Test\bin\Debug\netcoreapp2.1\testhost.dll
 C:\compartilhada\Projetos\Startup.Food\Startup.Food.Test\bin\Debug\netcoreapp2.1\Microsoft.TestPlatform.PlatformAbstractions.dll
@@ -31,10 +35,6 @@ C:\compartilhada\Projetos\Startup.Food\Startup.Food.Test\bin\Debug\netcoreapp2.1
 C:\compartilhada\Projetos\Startup.Food\Startup.Food.Test\bin\Debug\netcoreapp2.1\Startup.Food.Test.pdb
 C:\compartilhada\Projetos\Startup.Food\Startup.Food.Test\bin\Debug\netcoreapp2.1\Startup.Food.Repositorio.dll
 C:\compartilhada\Projetos\Startup.Food\Startup.Food.Test\bin\Debug\netcoreapp2.1\Startup.Food.Repositorio.pdb
-C:\compartilhada\Projetos\Startup.Food\Startup.Food.Test\obj\Debug\netcoreapp2.1\Startup.Food.Test.csprojAssemblyReference.cache
-C:\compartilhada\Projetos\Startup.Food\Startup.Food.Test\obj\Debug\netcoreapp2.1\Startup.Food.Test.AssemblyInfoInputs.cache
-C:\compartilhada\Projetos\Startup.Food\Startup.Food.Test\obj\Debug\netcoreapp2.1\Startup.Food.Test.AssemblyInfo.cs
-C:\compartilhada\Projetos\Startup.Food\Startup.Food.Test\obj\Debug\netcoreapp2.1\Startup.Food.Test.csproj.CoreCompileInputs.cache
 C:\compartilhada\Projetos\Startup.Food\Startup.Food.Test\obj\Debug\netcoreapp2.1\Startup.Food.Test.csproj.CopyComplete
 C:\compartilhada\Projetos\Startup.Food\Startup.Food.Test\obj\Debug\netcoreapp2.1\Startup.Food.Test.dll
 C:\compartilhada\Projetos\Startup.Food\Startup.Food.Test\obj\Debug\netcoreapp2.1\Startup.Food.Test.pdb

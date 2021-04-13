@@ -9,9 +9,9 @@ C:\Users\danielnovaes\source\repos\Startup.Food\Startup.Food.Repositorio\bin\Deb
 C:\Users\danielnovaes\source\repos\Startup.Food\Startup.Food.Repositorio\obj\Debug\Startup.Food.Repositorio.csproj.CoreCompileInputs.cache
 C:\Users\danielnovaes\source\repos\Startup.Food\Startup.Food.Repositorio\obj\Debug\Startup.Food.Repositorio.dll
 C:\Users\danielnovaes\source\repos\Startup.Food\Startup.Food.Repositorio\obj\Debug\Startup.Food.Repositorio.pdb
-C:\compartilhada\Projetos\Startup.Food\Startup.Food.Repositorio\bin\Debug\Startup.Food.Repositorio.dll
-C:\compartilhada\Projetos\Startup.Food\Startup.Food.Repositorio\bin\Debug\Startup.Food.Repositorio.pdb
 C:\compartilhada\Projetos\Startup.Food\Startup.Food.Repositorio\obj\Debug\Startup.Food.Repositorio.csprojAssemblyReference.cache
 C:\compartilhada\Projetos\Startup.Food\Startup.Food.Repositorio\obj\Debug\Startup.Food.Repositorio.csproj.CoreCompileInputs.cache
+C:\compartilhada\Projetos\Startup.Food\Startup.Food.Repositorio\bin\Debug\Startup.Food.Repositorio.dll
+C:\compartilhada\Projetos\Startup.Food\Startup.Food.Repositorio\bin\Debug\Startup.Food.Repositorio.pdb
 C:\compartilhada\Projetos\Startup.Food\Startup.Food.Repositorio\obj\Debug\Startup.Food.Repositorio.dll
 C:\compartilhada\Projetos\Startup.Food\Startup.Food.Repositorio\obj\Debug\Startup.Food.Repositorio.pdb

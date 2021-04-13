@@ -32,6 +32,12 @@ C:\Users\danielnovaes\source\repos\Startup.Food\Startup.Food.Api\obj\Debug\netco
 C:\Users\danielnovaes\source\repos\Startup.Food\Startup.Food.Api\obj\Debug\netcoreapp2.1\Startup.Food.Api.csproj.CopyComplete
 C:\Users\danielnovaes\source\repos\Startup.Food\Startup.Food.Api\obj\Debug\netcoreapp2.1\Startup.Food.Api.dll
 C:\Users\danielnovaes\source\repos\Startup.Food\Startup.Food.Api\obj\Debug\netcoreapp2.1\Startup.Food.Api.pdb
+C:\compartilhada\Projetos\Startup.Food\Startup.Food.Api\obj\Debug\netcoreapp2.1\Startup.Food.Api.csprojAssemblyReference.cache
+C:\compartilhada\Projetos\Startup.Food\Startup.Food.Api\obj\Debug\netcoreapp2.1\Startup.Food.Api.AssemblyInfoInputs.cache
+C:\compartilhada\Projetos\Startup.Food\Startup.Food.Api\obj\Debug\netcoreapp2.1\Startup.Food.Api.AssemblyInfo.cs
+C:\compartilhada\Projetos\Startup.Food\Startup.Food.Api\obj\Debug\netcoreapp2.1\Startup.Food.Api.csproj.CoreCompileInputs.cache
+C:\compartilhada\Projetos\Startup.Food\Startup.Food.Api\obj\Debug\netcoreapp2.1\Startup.Food.Api.RazorAssemblyInfo.cache
+C:\compartilhada\Projetos\Startup.Food\Startup.Food.Api\obj\Debug\netcoreapp2.1\Startup.Food.Api.RazorAssemblyInfo.cs
 C:\compartilhada\Projetos\Startup.Food\Startup.Food.Api\bin\Debug\netcoreapp2.1\appsettings.Development.json
 C:\compartilhada\Projetos\Startup.Food\Startup.Food.Api\bin\Debug\netcoreapp2.1\appsettings.json
 C:\compartilhada\Projetos\Startup.Food\Startup.Food.Api\bin\Debug\netcoreapp2.1\Startup.Food.Api.deps.json
@@ -41,12 +47,6 @@ C:\compartilhada\Projetos\Startup.Food\Startup.Food.Api\bin\Debug\netcoreapp2.1\
 C:\compartilhada\Projetos\Startup.Food\Startup.Food.Api\bin\Debug\netcoreapp2.1\Startup.Food.Api.pdb
 C:\compartilhada\Projetos\Startup.Food\Startup.Food.Api\bin\Debug\netcoreapp2.1\Startup.Food.Repositorio.dll
 C:\compartilhada\Projetos\Startup.Food\Startup.Food.Api\bin\Debug\netcoreapp2.1\Startup.Food.Repositorio.pdb
-C:\compartilhada\Projetos\Startup.Food\Startup.Food.Api\obj\Debug\netcoreapp2.1\Startup.Food.Api.csprojAssemblyReference.cache
-C:\compartilhada\Projetos\Startup.Food\Startup.Food.Api\obj\Debug\netcoreapp2.1\Startup.Food.Api.AssemblyInfoInputs.cache
-C:\compartilhada\Projetos\Startup.Food\Startup.Food.Api\obj\Debug\netcoreapp2.1\Startup.Food.Api.AssemblyInfo.cs
-C:\compartilhada\Projetos\Startup.Food\Startup.Food.Api\obj\Debug\netcoreapp2.1\Startup.Food.Api.csproj.CoreCompileInputs.cache
-C:\compartilhada\Projetos\Startup.Food\Startup.Food.Api\obj\Debug\netcoreapp2.1\Startup.Food.Api.RazorAssemblyInfo.cache
-C:\compartilhada\Projetos\Startup.Food\Startup.Food.Api\obj\Debug\netcoreapp2.1\Startup.Food.Api.RazorAssemblyInfo.cs
 C:\compartilhada\Projetos\Startup.Food\Startup.Food.Api\obj\Debug\netcoreapp2.1\Startup.Food.Api.RazorTargetAssemblyInfo.cache
 C:\compartilhada\Projetos\Startup.Food\Startup.Food.Api\obj\Debug\netcoreapp2.1\Startup.Food.Api.csproj.CopyComplete
 C:\compartilhada\Projetos\Startup.Food\Startup.Food.Api\obj\Debug\netcoreapp2.1\Startup.Food.Api.dll

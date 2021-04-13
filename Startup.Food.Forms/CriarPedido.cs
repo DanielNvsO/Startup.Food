@@ -13,7 +13,8 @@ using System.Net.Http;
 using Newtonsoft.Json;
 
 using Startup.Food.Repositorio.Interface;
-using Startup.Food.Repositorio.Service;
+using Startup.Food.Repositorio.Negocio;
+using Startup.Food.Repositorio.Builder;
 using Newtonsoft.Json.Linq;
 
 namespace Startup.Food.Forms
@@ -28,6 +29,7 @@ namespace Startup.Food.Forms
 
         public List<EntidadeLanche> EntidadeLanches;
         public List<EntidadeIngrediente> EntidadeIngredientes;
+        public List<EntidadePedidoItem> EntidadePedidoItem;
 
         private void CriarPedido_Load(object sender, EventArgs e)
         {
@@ -106,12 +108,10 @@ namespace Startup.Food.Forms
                 var valorCaculado = Decimal.Round(Decimal.Parse(promocao["Valor"].ToString()),2);
                 Valor = Decimal.Round(Valor, 2);
 
-                LanchesAdicionadoGrid.Rows.Add(Lanche.Descricao,
-                                        Decimal.Round(valorCaculado, 2), 
-                                        ingredientesBuilder.ToString(), 
-                                        promocao["NomePromocao"],
-                                        Valor,
-                                        Valor - valorCaculado);
+                EntidadePedidoItem.Add(new EntidadePedidoItem(0, 0, Lanche.Descricao, ingredientesBuilder.ToString(), valorCaculado, Valor, Valor - valorCaculado, promocao["NomePromocao"].ToString()));
+
+                LanchesAdicionadoGrid.DataSource = EntidadePedidoItem.ToArray();
+                LanchesAdicionadoGrid.Refresh();
 
                 ValorPedido.Text = ValorPedido.Text.Replace("R$ ","");
                 ValorDesconto.Text = ValorDesconto.Text.Replace("R$ ", "");
@@ -174,35 +174,62 @@ namespace Startup.Food.Forms
 
         private void FinalizarPedido_Click(object sender, EventArgs e)
         {
+            BuilderPedido Pedido;
+            ExecutarAPI ExecAPI;
+            HttpResponseMessage msg;
+
             try
             {
 
-                if (LanchesAdicionadoGrid.RowCount <= 1)
+                if (LanchesAdicionadoGrid.RowCount <= 0)
                     return;
 
-                LanchesIngredientes();
+                ValorPedido.Text = ValorPedido.Text.Replace("R$ ", "");
+                ValorDesconto.Text = ValorDesconto.Text.Replace("R$ ", "");
+                ValorTotal.Text = ValorTotal.Text.Replace("R$ ", "");
 
-                LanchesAdicionadoGrid.Rows.Clear();
+                Pedido = new BuilderPedido();
 
-                EntidadeLanches = new List<EntidadeLanche>();
-                EntidadeIngredientes = new List<EntidadeIngrediente>();
+                Pedido.DataPedido(DateTime.Now).
+                        ValorTotal(Decimal.Parse(ValorTotal.Text)).
+                        ValorPedido(Decimal.Parse(ValorPedido.Text)).
+                        ValorDesconto(Decimal.Parse(ValorDesconto.Text)).
+                        PedidoItem(EntidadePedidoItem);
 
-                LanchesGrid.DataSource = EntidadeLanches;
-                IngredientesGrid.DataSource = EntidadeIngredientes;
 
-                ValorPedido.Text = "0";
-                ValorDesconto.Text = "0";
-                ValorTotal.Text = "0";
+                ExecAPI = new ExecutarAPI();
+                msg = ExecAPI.POST(Pedido.CriarPedido(), "Pedido/InsertPedido");
 
-                timer1.Stop();
+                bool PedidoCriado = JsonConvert.DeserializeObject<bool>(msg.Content.ReadAsStringAsync().Result);
 
-                Hora = 0;
-                Minuto = 0;
-                Segundo = 0;
+                if (PedidoCriado) { 
 
-                Tempo.Text = "00:00:00";
+                    EntidadeLanches = new List<EntidadeLanche>();
+                    EntidadeIngredientes = new List<EntidadeIngrediente>();
+                    EntidadePedidoItem = new List<EntidadePedidoItem>();
 
-                MessageBox.Show("Pedido Finalizado!", "Mensagem");
+                    LanchesGrid.DataSource = EntidadeLanches;
+                    IngredientesGrid.DataSource = EntidadeIngredientes;
+                    LanchesAdicionadoGrid.DataSource = EntidadePedidoItem;
+
+                    ValorPedido.Text = "0";
+                    ValorDesconto.Text = "0";
+                    ValorTotal.Text = "0";
+
+                    timer1.Stop();
+
+                    Hora = 0;
+                    Minuto = 0;
+                    Segundo = 0;
+
+                    Tempo.Text = "00:00:00";
+
+                    MessageBox.Show("Pedido Finalizado!", "Mensagem");
+
+                }else
+                {
+                    MessageBox.Show("ERRO: Pedido não foi criado!", "Mensagem");
+                }
 
             }
             catch(Exception ex)
@@ -233,7 +260,7 @@ namespace Startup.Food.Forms
                 LanchesGrid.Columns[0].Visible = false;
                 LanchesGrid.Columns[1].HeaderText = "Código";
                 LanchesGrid.Columns[2].HeaderText = "Detalhe Lanche";
-                LanchesGrid.Columns[2].Visible = false;
+                //LanchesGrid.Columns[2].Visible = false;
 
                 msg = ExecAPI.POST(null, "Lanche/ConsultarIngredientes");
 
@@ -247,6 +274,15 @@ namespace Startup.Food.Forms
                 IngredientesGrid.Columns[2].ReadOnly = true;
                 IngredientesGrid.Columns[3].ReadOnly = true;
 
+                EntidadePedidoItem = new List<EntidadePedidoItem>();
+
+                LanchesAdicionadoGrid.DataSource = EntidadePedidoItem;
+
+                LanchesAdicionadoGrid.Refresh();
+                LanchesAdicionadoGrid.Columns[0].Visible = false;
+                LanchesAdicionadoGrid.Columns[1].Visible = false;
+                LanchesAdicionadoGrid.Columns[5].Visible = false;
+                LanchesAdicionadoGrid.Columns[6].Visible = false;
 
                 LanchesIngredientes();
 
@@ -306,6 +342,36 @@ namespace Startup.Food.Forms
                 MessageBox.Show(ex.Message.ToString(), "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
+        }
+
+        private void LanchesAdicionadoGrid_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+
+                if (e.KeyCode != Keys.Delete)
+                    return;
+
+                EntidadePedidoItem pedidoItem = (EntidadePedidoItem)LanchesAdicionadoGrid.Rows[LanchesAdicionadoGrid.SelectedCells[0].RowIndex].DataBoundItem;
+
+                ValorPedido.Text = ValorPedido.Text.Replace("R$ ", "");
+                ValorDesconto.Text = ValorDesconto.Text.Replace("R$ ", "");
+                ValorTotal.Text = ValorTotal.Text.Replace("R$ ", "");
+
+                ValorPedido.Text = "R$ " + (Decimal.Parse(ValorPedido.Text) - pedidoItem.ValorPedido).ToString();
+                ValorDesconto.Text = "R$ " + (Decimal.Parse(ValorDesconto.Text) - pedidoItem.ValorDesconto).ToString();
+                ValorTotal.Text = "R$ " + (Decimal.Parse(ValorTotal.Text) - pedidoItem.ValorTotal).ToString();
+
+                EntidadePedidoItem.RemoveAt(LanchesAdicionadoGrid.SelectedCells[0].RowIndex);
+                LanchesAdicionadoGrid.DataSource = EntidadePedidoItem.ToArray();
+                LanchesAdicionadoGrid.Refresh();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
         }
     }
 }

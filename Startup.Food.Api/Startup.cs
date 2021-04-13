@@ -78,6 +78,8 @@ namespace Startup.Food.Api
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.Add(new ServiceDescriptor(typeof(IRepositorioLanche), typeof(RepositorioLanche), ServiceLifetime.Scoped));
+            services.Add(new ServiceDescriptor(typeof(IRepositorioPedido), typeof(RepositorioPedido), ServiceLifetime.Scoped));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
