@@ -62,7 +62,7 @@
             this.groupBox1.Controls.Add(this.LanchesGrid);
             this.groupBox1.Location = new System.Drawing.Point(12, 38);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(888, 199);
+            this.groupBox1.Size = new System.Drawing.Size(880, 199);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Escolher Lanche";
@@ -70,9 +70,9 @@
             // IngredientesGrid
             // 
             this.IngredientesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.IngredientesGrid.Location = new System.Drawing.Point(405, 36);
+            this.IngredientesGrid.Location = new System.Drawing.Point(405, 33);
             this.IngredientesGrid.Name = "IngredientesGrid";
-            this.IngredientesGrid.Size = new System.Drawing.Size(349, 134);
+            this.IngredientesGrid.Size = new System.Drawing.Size(349, 137);
             this.IngredientesGrid.TabIndex = 2;
             // 
             // AdicionarLanche
@@ -182,7 +182,7 @@
             // 
             // IniciarPedido
             // 
-            this.IniciarPedido.Location = new System.Drawing.Point(108, 8);
+            this.IniciarPedido.Location = new System.Drawing.Point(25, 7);
             this.IniciarPedido.Name = "IniciarPedido";
             this.IniciarPedido.Size = new System.Drawing.Size(108, 24);
             this.IniciarPedido.TabIndex = 8;
@@ -199,7 +199,7 @@
             // 
             this.Tempo.AutoSize = true;
             this.Tempo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tempo.Location = new System.Drawing.Point(249, 7);
+            this.Tempo.Location = new System.Drawing.Point(150, 6);
             this.Tempo.Name = "Tempo";
             this.Tempo.Size = new System.Drawing.Size(0, 25);
             this.Tempo.TabIndex = 9;
@@ -208,7 +208,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(921, 475);
+            this.ClientSize = new System.Drawing.Size(903, 462);
             this.Controls.Add(this.Tempo);
             this.Controls.Add(this.IniciarPedido);
             this.Controls.Add(this.ValorTotal);
@@ -220,7 +220,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "CriarPedido";
-            this.Text = "Form1";
+            this.Text = "Criar Pedido do Lanche";
             this.Load += new System.EventHandler(this.CriarPedido_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.IngredientesGrid)).EndInit();
