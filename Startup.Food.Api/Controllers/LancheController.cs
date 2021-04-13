@@ -11,7 +11,9 @@ using Microsoft.IdentityModel.Tokens;
 
 using Startup.Food.Repositorio.Entidade;
 using Startup.Food.Repositorio.Repositorio;
-
+using Startup.Food.Repositorio.Service;
+using Startup.Food.Api.Services;
+using Newtonsoft.Json.Linq;
 
 namespace Startup.Food.Api.Controllers
 {
@@ -51,6 +53,7 @@ namespace Startup.Food.Api.Controllers
         {
             RepositorioLanche ingrediente = new RepositorioLanche();
             List<EntidadeIngrediente> _return;
+
             try
             {
 
@@ -71,6 +74,34 @@ namespace Startup.Food.Api.Controllers
 
 
         }
-    
+
+        [HttpPost]
+        [Route("CalcularPromocao")]
+        [Authorize]
+        public ActionResult CalcularPromocao([FromBody] EntidadeLanche Lanche)
+        {
+            Promocao promo = new Promocao();
+            JObject _return;
+
+            try
+            {
+                _return = promo.CalcularPromocao(Lanche);
+
+                return Ok(_return);
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            finally
+            {
+                promo = null;
+                _return = null;
+            }
+
+
+        }
+
     }
 }

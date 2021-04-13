@@ -7,7 +7,7 @@ using Startup.Food.Repositorio.Entidade;
 using Startup.Food.Repositorio.Service;
 using Startup.Food.Repositorio.Interface;
 
-namespace Startup.Food.Repositorio.Service
+namespace Startup.Food.Repositorio.Negocio
 {
     public class ServicePromocao
     {

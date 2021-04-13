@@ -7,7 +7,7 @@ using Startup.Food.Repositorio.Entidade;
 using Startup.Food.Repositorio.Interface;
 
 
-namespace Startup.Food.Repositorio.Service.Promocao
+namespace Startup.Food.Repositorio.Negocio.Promocao
 {
     public class MuitaCarne : IPromocao
     {

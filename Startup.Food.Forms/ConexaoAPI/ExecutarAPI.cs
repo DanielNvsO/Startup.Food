@@ -35,9 +35,16 @@ namespace Startup.Food.Forms.ConexaoAPI
             {
                 var Token = GetToken();
 
-                //requestMessage = JsonConvert.SerializeObject(Entidade);
-                //content = new StringContent(requestMessage, Encoding.UTF8, "application/json");
+                if (Entidade != null) {
+                    requestMessage = JsonConvert.SerializeObject(Entidade);
+                    content = new StringContent(requestMessage, Encoding.UTF8, "application/json");
+                }
+                else
+                {
+                    content = null;
+                }
 
+                
 
                 using (var cliente = new HttpClient())
                 {
@@ -45,9 +52,10 @@ namespace Startup.Food.Forms.ConexaoAPI
                     cliente.DefaultRequestHeaders.Authorization =
                                     new AuthenticationHeaderValue("Bearer", Token);
 
-                    //responseMessage = cliente.PostAsync(_conexaoAPI + _url, content).Result;
-
-                    responseMessage = cliente.PostAsync(_conexaoAPI + _url,null).Result;
+                    if (Entidade != null)
+                        responseMessage = cliente.PostAsync(_conexaoAPI + _url, content).Result;
+                    else
+                        responseMessage = cliente.PostAsync(_conexaoAPI + _url,null).Result;
 
                     if (!responseMessage.IsSuccessStatusCode)
                         throw new Exception("Erro retorno API:" + _conexaoAPI + _url);

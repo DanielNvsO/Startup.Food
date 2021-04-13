@@ -13,8 +13,8 @@ using System.Net.Http;
 using Newtonsoft.Json;
 
 using Startup.Food.Repositorio.Interface;
-using Startup.Food.Repositorio.Service.Promocao;
 using Startup.Food.Repositorio.Service;
+using Newtonsoft.Json.Linq;
 
 namespace Startup.Food.Forms
 {
@@ -68,7 +68,8 @@ namespace Startup.Food.Forms
 
         private void AdicionarLanche_Click(object sender, EventArgs e)
         {
-            
+            ExecutarAPI ExecAPI;
+            HttpResponseMessage msg;
 
             try
             {
@@ -96,32 +97,29 @@ namespace Startup.Food.Forms
 
                 Lanche.Valor = Valor;
 
-                IPromocao light = new Light();
-                IPromocao muitaCarne = new MuitaCarne();
-                IPromocao muitoQueijo = new MuitoQueijo();
+                ExecAPI = new ExecutarAPI();
 
-                ServicePromocao promocao = new ServicePromocao();
+                msg = ExecAPI.POST(Lanche, "Lanche/CalcularPromocao");
 
-                promocao.CalcularPromocao(Lanche, light);
-                promocao.CalcularPromocao(Lanche, muitaCarne);
-                promocao.CalcularPromocao(Lanche, muitoQueijo);
+                JObject promocao = JsonConvert.DeserializeObject<JObject>(msg.Content.ReadAsStringAsync().Result);
 
-
+                var valorCaculado = Decimal.Round(Decimal.Parse(promocao["Valor"].ToString()),2);
+                Valor = Decimal.Round(Valor, 2);
 
                 LanchesAdicionadoGrid.Rows.Add(Lanche.Descricao,
-                                            Decimal.Round(Lanche.Valor,2), 
-                                            ingredientesBuilder.ToString(), 
-                                            promocao.NomePromocao,
-                                            Decimal.Round(Valor,2),
-                                            Decimal.Round(Valor - Lanche.Valor,2));
+                                        Decimal.Round(valorCaculado, 2), 
+                                        ingredientesBuilder.ToString(), 
+                                        promocao["NomePromocao"],
+                                        Valor,
+                                        Valor - valorCaculado);
 
                 ValorPedido.Text = ValorPedido.Text.Replace("R$ ","");
                 ValorDesconto.Text = ValorDesconto.Text.Replace("R$ ", "");
                 ValorTotal.Text = ValorTotal.Text.Replace("R$ ", "");
 
-                ValorPedido.Text = "R$ " + (Decimal.Round(Valor, 2) + Decimal.Round(Decimal.Parse(ValorPedido.Text),2)).ToString();
-                ValorDesconto.Text = "R$ " + (Decimal.Round(Valor - Lanche.Valor, 2) + Decimal.Round(Decimal.Parse(ValorDesconto.Text), 2)).ToString();
-                ValorTotal.Text = "R$ " + (Decimal.Round(Lanche.Valor, 2) + Decimal.Round(Decimal.Parse(ValorTotal.Text), 2)).ToString();
+                ValorPedido.Text = "R$ " + (Valor + Decimal.Parse(ValorPedido.Text)).ToString();
+                ValorDesconto.Text = "R$ " + (Valor - valorCaculado + Decimal.Parse(ValorDesconto.Text)).ToString();
+                ValorTotal.Text = "R$ " + (valorCaculado + Decimal.Parse(ValorTotal.Text)).ToString();
 
 
             }
