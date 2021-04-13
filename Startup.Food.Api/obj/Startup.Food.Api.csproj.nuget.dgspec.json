@@ -1,0 +1,107 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\compartilhada\\Projetos\\Startup.Food\\Startup.Food.Api\\Startup.Food.Api.csproj": {}
+  },
+  "projects": {
+    "C:\\compartilhada\\Projetos\\Startup.Food\\Startup.Food.Api\\Startup.Food.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\compartilhada\\Projetos\\Startup.Food\\Startup.Food.Api\\Startup.Food.Api.csproj",
+        "projectName": "Startup.Food.Api",
+        "projectPath": "C:\\compartilhada\\Projetos\\Startup.Food\\Startup.Food.Api\\Startup.Food.Api.csproj",
+        "packagesPath": "C:\\Users\\danielnovaes\\.nuget\\packages\\",
+        "outputPath": "C:\\compartilhada\\Projetos\\Startup.Food\\Startup.Food.Api\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\danielnovaes\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "targetAlias": "netcoreapp2.1",
+            "projectReferences": {
+              "C:\\compartilhada\\Projetos\\Startup.Food\\Startup.Food.Repositorio\\Startup.Food.Repositorio.csproj": {
+                "projectPath": "C:\\compartilhada\\Projetos\\Startup.Food\\Startup.Food.Repositorio\\Startup.Food.Repositorio.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "targetAlias": "netcoreapp2.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.1, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "System.Net.Http": {
+              "target": "Package",
+              "version": "[4.3.4, )"
+            },
+            "System.Net.Requests": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\compartilhada\\Projetos\\Startup.Food\\Startup.Food.Repositorio\\Startup.Food.Repositorio.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\compartilhada\\Projetos\\Startup.Food\\Startup.Food.Repositorio\\Startup.Food.Repositorio.csproj",
+        "projectName": "Startup.Food.Repositorio",
+        "projectPath": "C:\\compartilhada\\Projetos\\Startup.Food\\Startup.Food.Repositorio\\Startup.Food.Repositorio.csproj"
+      },
+      "frameworks": {
+        "net45": {}
+      }
+    }
+  }
+}

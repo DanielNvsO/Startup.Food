@@ -1,0 +1,17 @@
+C:\compartilhada\Projetos\SoftwareGerenciamento\NewRepo\Mstar.Gerenciamento.Api\bin\Debug\netcoreapp2.1\Mstar.Gerenciamento.Api.deps.json
+C:\compartilhada\Projetos\SoftwareGerenciamento\NewRepo\Mstar.Gerenciamento.Api\bin\Debug\netcoreapp2.1\Mstar.Gerenciamento.Api.runtimeconfig.json
+C:\compartilhada\Projetos\SoftwareGerenciamento\NewRepo\Mstar.Gerenciamento.Api\bin\Debug\netcoreapp2.1\Mstar.Gerenciamento.Api.runtimeconfig.dev.json
+C:\compartilhada\Projetos\SoftwareGerenciamento\NewRepo\Mstar.Gerenciamento.Api\bin\Debug\netcoreapp2.1\Mstar.Gerenciamento.Api.dll
+C:\compartilhada\Projetos\SoftwareGerenciamento\NewRepo\Mstar.Gerenciamento.Api\bin\Debug\netcoreapp2.1\Mstar.Gerenciamento.Api.pdb
+C:\compartilhada\Projetos\SoftwareGerenciamento\NewRepo\Mstar.Gerenciamento.Api\bin\Debug\netcoreapp2.1\RepositorioGerenciamento.dll
+C:\compartilhada\Projetos\SoftwareGerenciamento\NewRepo\Mstar.Gerenciamento.Api\bin\Debug\netcoreapp2.1\RepositorioGerenciamento.pdb
+C:\compartilhada\Projetos\SoftwareGerenciamento\NewRepo\Mstar.Gerenciamento.Api\obj\Debug\netcoreapp2.1\Mstar.Gerenciamento.Api.csprojAssemblyReference.cache
+C:\compartilhada\Projetos\SoftwareGerenciamento\NewRepo\Mstar.Gerenciamento.Api\obj\Debug\netcoreapp2.1\Mstar.Gerenciamento.Api.csproj.CoreCompileInputs.cache
+C:\compartilhada\Projetos\SoftwareGerenciamento\NewRepo\Mstar.Gerenciamento.Api\obj\Debug\netcoreapp2.1\Mstar.Gerenciamento.Api.RazorAssemblyInfo.cache
+C:\compartilhada\Projetos\SoftwareGerenciamento\NewRepo\Mstar.Gerenciamento.Api\obj\Debug\netcoreapp2.1\Mstar.Gerenciamento.Api.RazorAssemblyInfo.cs
+C:\compartilhada\Projetos\SoftwareGerenciamento\NewRepo\Mstar.Gerenciamento.Api\obj\Debug\netcoreapp2.1\Mstar.Gerenciamento.Api.AssemblyInfoInputs.cache
+C:\compartilhada\Projetos\SoftwareGerenciamento\NewRepo\Mstar.Gerenciamento.Api\obj\Debug\netcoreapp2.1\Mstar.Gerenciamento.Api.AssemblyInfo.cs
+C:\compartilhada\Projetos\SoftwareGerenciamento\NewRepo\Mstar.Gerenciamento.Api\obj\Debug\netcoreapp2.1\Mstar.Gerenciamento.Api.RazorTargetAssemblyInfo.cache
+C:\compartilhada\Projetos\SoftwareGerenciamento\NewRepo\Mstar.Gerenciamento.Api\obj\Debug\netcoreapp2.1\Mstar.Gerenciamento.Api.csproj.CopyComplete
+C:\compartilhada\Projetos\SoftwareGerenciamento\NewRepo\Mstar.Gerenciamento.Api\obj\Debug\netcoreapp2.1\Mstar.Gerenciamento.Api.dll
+C:\compartilhada\Projetos\SoftwareGerenciamento\NewRepo\Mstar.Gerenciamento.Api\obj\Debug\netcoreapp2.1\Mstar.Gerenciamento.Api.pdb

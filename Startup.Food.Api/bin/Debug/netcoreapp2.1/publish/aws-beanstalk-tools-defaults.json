@@ -1,0 +1,18 @@
+
+{
+    "comment" : "This file is used to help set default values when using the dotnet CLI extension Amazon.ElasticBeanstalk.Tools. For more information run \"dotnet eb --help\" from the project root.",
+    "profile" : "API1",
+    "region"  : "us-east-2",
+    "application" : "APIMstarGerenciamento",
+    "environment" : "Apimstargerenciamento-env",
+    "solution-stack" : "64bit Windows Server 2019 v2.5.9 running IIS 10.0",
+    "iis-website"    : "Default Web Site",
+    "app-path"       : "/",
+    "enable-xray"    : false,
+    "configuration"  : "Debug",
+    "framework"      : "netcoreapp2.1",
+    "self-contained" : true,
+    "enhanced-health-type" : "enhanced",
+    "additional-options"   : "",
+    "proxy-server"         : "nginx"
+}
